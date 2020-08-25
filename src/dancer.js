@@ -14,6 +14,14 @@ Dancer.prototype.step = function () {
 Dancer.prototype.half = function (num) {
   return num / 2;
 };
+
+Dancer.prototype.double = function (num) {
+  return num * 2;
+};
+Dancer.prototype.getRandom = function (min, max) {
+  return Math.floor(Math.random() * (max - min)) + min + '%';
+};
+
 Dancer.prototype.setPosition = function (top, left) {
   var positionSettings = {
     top: this.top,

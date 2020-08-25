@@ -11,17 +11,18 @@ Sharks.prototype.step = function () {
 };
 
 Sharks.prototype.setPosition = function (top, left) {
-  if (left > 670) {
-    this.left = Sharks.half(this.left);
-  }
-  var positionSettings = {
-    left: this.left
-  };
   Dancer.prototype.setPosition.call(this);
 
+  var xAxis = this.getRandom(5, 45);
+
+  var positionSettings = {
+    left: xAxis
+  };
+
   var styleSettings = {
-    "border": "10px solid green"
+    'border': '10px solid green'
   };
 
   this.$node.css(styleSettings);
+  this.$node.css(positionSettings);
 };
