@@ -5,18 +5,15 @@ var Sharks = function (top, left, timeBetweenSteps) {
 Sharks.prototype = Object.create(Dancer.prototype);
 Sharks.prototype.constructor = Sharks;
 
-Sharks.prototype.step = function () {
-  // Dancer.prototype.step.call(this);
-  // this.$node.toggle();
-};
-
 Sharks.prototype.setPosition = function (top, left) {
   Dancer.prototype.setPosition.call(this);
 
-  var xAxis = this.getRandom(5, 45);
+  var xAxis = this.getRandom(5, 45, '%');
+  var yAxis = this.getRandom(87, 99, '%');
 
   var positionSettings = {
-    left: xAxis
+    left: xAxis,
+    top: yAxis
   };
 
   var styleSettings = {
@@ -25,4 +22,10 @@ Sharks.prototype.setPosition = function (top, left) {
 
   this.$node.css(styleSettings);
   this.$node.css(positionSettings);
+  return [xAxis, yAxis];
+};
+
+Sharks.prototype.step = function () {
+  Dancer.prototype.step.call(this);
+  position = this.setPosition();
 };

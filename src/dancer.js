@@ -11,15 +11,8 @@ Dancer.prototype.step = function () {
   setTimeout(this.step.bind(this), this.timeBetweenSteps);
 };
 
-Dancer.prototype.half = function (num) {
-  return num / 2;
-};
-
-Dancer.prototype.double = function (num) {
-  return num * 2;
-};
-Dancer.prototype.getRandom = function (min, max) {
-  return Math.floor(Math.random() * (max - min)) + min + '%';
+Dancer.prototype.getRandom = function (min, max, unit) {
+  return Math.floor(Math.random() * (max - min)) + min + unit;
 };
 
 Dancer.prototype.setPosition = function (top, left) {
