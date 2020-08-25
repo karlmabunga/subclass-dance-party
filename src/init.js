@@ -20,10 +20,14 @@ $(document).ready(function () {
     // get the maker function for the kind of dancer we're supposed to make
     var dancerMakerFunction = window[dancerMakerFunctionName];
 
+    var getRandomFloorHeight = function () {
+      return Math.floor(Math.random() * 100) + 800;
+    };
+
     // make a dancer with a random position
 
     var dancer = new dancerMakerFunction(
-      $('body').height() * Math.random(),
+      getRandomFloorHeight(),
       $('body').width() * Math.random(),
       Math.random() * 1000
     );
