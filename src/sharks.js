@@ -5,9 +5,18 @@ var Sharks = function (top, left, timeBetweenSteps) {
 Sharks.prototype = Object.create(Dancer.prototype);
 Sharks.prototype.constructor = Sharks;
 
+var switchSize = function() {
+  var shark = document.getElementById('dancer');
+  if (shark.style.border === '10 px solid green') {
+    shark.style.border = '15 px solid green';
+  } else {
+    shark.style.border = '10 px solid green';
+  }
+};
 Sharks.prototype.step = function () {
-  // Dancer.prototype.step.call(this);
-  // this.$node.toggle();
+  Dancer.prototype.step.call(this);
+  this.$node.toggle();
+  // switchSize();
 };
 
 Sharks.prototype.setPosition = function (top, left) {
