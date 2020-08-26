@@ -15,6 +15,8 @@ Dancer.prototype.getRandom = function (min, max, unit) {
 };
 
 Dancer.prototype.setPosition = function (xMin, xMax, yMin, yMax) {
+
+  var xAxis = this.getRandom(xMin, xMax, '%');
   var yAxis = this.getRandom(yMin, yMax, '%');
 
   var positionSettings = {
