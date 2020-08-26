@@ -15,6 +15,10 @@ $(document).ready(function () {
      * A new object of the given type will be created and added
      * to the stage.
      */
+    //When you click on this button, set dancerMakerFunctionName to the value store in "dancer-maker-function-name" of the button you click
+
+    //When you click on this button, set dancerMakerFunctionName to the value store in "dancer-maker-function-name" of the button you clicked
+
     var dancerMakerFunctionName = $(this).data('dancer-maker-function-name');
 
     // get the maker function for the kind of dancer we're supposed to make
@@ -34,4 +38,3 @@ $(document).ready(function () {
     $('body').append(dancer.$node);
   });
 });
-

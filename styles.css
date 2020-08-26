@@ -1,30 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+
 body, html{
   height:100%;
+  font-family: 'Oswald', sans-serif;
 }
 body{
   margin: 0px;
   background-color:#444;
   font-size: 18px;
- background-image: url("img/wss.jpg");
-background-size: contain;
-background-repeat: no-repeat;
+  background-image: url("img/wss.jpg");
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 body, a:link, a:visited, a:active{
   color: lightblue;
+  font-size: 20px;
 }
 .title, .addDancerButton{
-  padding:5px 12px;
+  padding:10px 12px;
   float:right;
+  font-size: 30px;
 }
 .topbar{
   height:32px;
-  background-color: #555;
+  background-color: rgb(12, 12, 12, .25);
 }
 .title{
-  background-color: #777;
+  background-color: rgb(68, 0, 34);
 }
 .dancer{
-  border:10px solid red;
+  height: 250px;
+  width: auto;
   border-radius:10px;
   position:absolute;
+}
+.shark{
+  height: 350px;
+  animation: shark 5s infinite;
+}
+
+@keyframes shark {
+  0%,
+  100% {
+    left: 0;
+  }
+
+  50% {
+    left: 500px;
+  }
+}
+
+.jet{
+  animation: jet 5s infinite;
+}
+
+@keyframes jet {
+  0%,
+  100% {
+    left: 700px;
+  }
+
+  50% {
+    left: 1100px;
+  }
 }

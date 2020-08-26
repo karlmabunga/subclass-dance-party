@@ -1,31 +1,25 @@
 var Dancer = function (top, left, timeBetweenSteps) {
-  this.$node = $('<span class="dancer"></span>');
+  //this.$node = $('<div class="dancer"><div>');
   this.top = top;
   this.left = left;
   this.timeBetweenSteps = timeBetweenSteps;
   this.step();
-  this.setPosition(top, left);
 };
 
 Dancer.prototype.step = function () {
   setTimeout(this.step.bind(this), this.timeBetweenSteps);
 };
 
-Dancer.prototype.half = function (num) {
-  return num / 2;
+Dancer.prototype.getRandom = function (min, max, unit) {
+  return Math.floor(Math.random() * (max - min)) + min + unit;
 };
 
-Dancer.prototype.double = function (num) {
-  return num * 2;
-};
-Dancer.prototype.getRandom = function (min, max) {
-  return Math.floor(Math.random() * (max - min)) + min + '%';
-};
+Dancer.prototype.setPosition = function (xMin, xMax, yMin, yMax) {
+  var yAxis = this.getRandom(yMin, yMax, '%');
 
-Dancer.prototype.setPosition = function (top, left) {
   var positionSettings = {
-    top: this.top,
-    left: this.left
+    left: xAxis,
+    top: yAxis
   };
 
   this.$node.css(positionSettings);
